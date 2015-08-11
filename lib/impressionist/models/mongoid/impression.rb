@@ -2,10 +2,6 @@ class Impression
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  attr_accessible :impressionable_type, :impressionable_field, :impressionable_id, :user_id,
-  :controller_name, :action_name, :view_name, :request_hash, :ip_address,
-  :session_hash, :message, :referrer
-
   belongs_to :impressionable, polymorphic: true
 
   field :user_id
@@ -28,5 +24,5 @@ class Impression
       end
     end
   end
-  
+
 end

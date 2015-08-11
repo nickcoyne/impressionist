@@ -1,9 +1,5 @@
 class Impression < ActiveRecord::Base
-  attr_accessible :impressionable_type, :impressionable_id, :user_id,
-  :controller_name, :action_name, :view_name, :request_hash, :ip_address,
-  :session_hash, :message, :referrer
-  
-  belongs_to :impressionable, :polymorphic => true, :counter_cache => :view_count
+  belongs_to :impressionable, polymorphic: true, counter_cache: :view_count
   #after_save :update_impressions_counter_cache
 
   private
